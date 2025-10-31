@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRACTICAL WORK 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /*  Background & body styler */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    /* Form styler */
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .form-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Tajuk dengan tulisan*/
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    p {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    /* Student Image */
+    #synopsis {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    #synopsis h2 {
+      color: #1565C0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .synopsis-img img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #007bff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .synopsis-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 123, 255, 0.7);
+    }
+
+    /*  Inputs */
+    label {
+      font-weight: 600;
+      margin-top: 15px;
+      display: block;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+      outline: none;
+    }
+
+    .radio-group {
+      margin: 10px 0;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+
+    /* ✨ Buttons */
+    .registerbtn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .registerbtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.5);
+    }
+
+    .registerbtn.reset {
+      background: linear-gradient(90deg, #888, #555);
+    }
+
+    hr {
+      border: none;
+      border-top: 3px solid #007bff;
+      margin: 30px 0;
+    }
+
+    /*  Animation keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>BLOOM COLLEGE</h1>
+    <p>Student Registration Form</p>
+
+    <form id="registrationForm" enctype="multipart/form-data">
+      <div id="synopsis" class="container movie-section mt-3">
+        <h2>Student Image</h2>
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6 synopsis-img mb-3 mb-md-0">
+            <img src="image/piz14.jpg" alt="Student Image">
+          </div>
+        </div>
+      </div>
+
+      <label>Student Name</label>
+      <input type="text" id="student_name" placeholder="Full name" required>
+
+      <label>Father's Name</label>
+      <input type="text" id="father_name" placeholder="Father's full name" required>
+
+      <label>Mother's Name</label>
+      <input type="text" id="mother_name" placeholder="Mother's full name" required>
+
+      <label>Gender</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" checked> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <label>Date of Birth</label>
+      <input type="date" id="dob" required>
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="email@xyz.com" required>
+
+      <label>Level</label>
+      <select id="level" required>
+        <option value="">-- Select Level --</option>
+        <option>Degree</option>
+        <option>Master</option>
+        <option>Diploma</option>
+        <option>PhD</option>
+      </select>
+
+      <label>Department</label>
+      <select id="department" required>
+        <option value="">-- Select Department --</option>
+        <option>JTMK</option><option>JKPK</option><option>JKA</option>
+        <option>JKE</option><option>JP</option><option>JMSK</option>
+      </select>
+
+      <label>Tel/Mobile</label>
+      <input type="text" id="tel" required>
+
+      <hr>
+      <h1>ADDRESS</h1>
+
+      <label>State</label>
+      <select id="state" required>
+        <option value="">-- Select State --</option>
+        <option>Johor</option><option>Kedah</option><option>Kelantan</option>
+        <option>Melaka</option><option>Negeri Sembilan</option><option>Pahang</option>
+        <option>Pulau Pinang</option><option>Perak</option><option>Perlis</option>
+        <option>Sabah</option><option>Sarawak</option><option>Selangor</option>
+        <option>Terengganu</option><option>Wilayah Persekutuan Kuala Lumpur</option>
+        <option>Wilayah Persekutuan Labuan</option><option>Wilayah Persekutuan Putrajaya</option>
+      </select>
+
+      <label>City</label>
+      <input type="text" id="city" required>
+
+      <label>Postcode</label>
+      <input type="text" id="postcode" required>
+
+      <hr>
+      <div class="d-flex justify-content-between mt-3">
+        <button type="submit" class="registerbtn">Register</button>
+        <button type="reset" class="registerbtn reset">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
